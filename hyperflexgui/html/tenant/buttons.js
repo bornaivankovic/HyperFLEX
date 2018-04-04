@@ -79,4 +79,8 @@ $(function () {
         $("button#infoNodeAddToVSDN").removeAttr("disabled");
     });
 
+    // Button: Change Hypervisor
+    $("button#changeHypervisor").click(function () {
+        hyperflexChangeHypervisor(function(){},[$("#infohvIP").val()]);
+    });
 });

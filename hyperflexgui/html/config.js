@@ -1,9 +1,9 @@
 /*  Hyperflex core RPC ip and port */
-var JSONRPC_IP = "10.162.149.124";
+var JSONRPC_IP = "10.162.149.126";
 var JSONRPC_PORT = 9469;
 
 /*  Hyperflex core WebSocketServer ip and port */
-var WSS_IP = "10.162.149.124";
+var WSS_IP = "10.162.149.126";
 var WSS_PORT = 9000;
 
 /*  Perfbench RPC Dispatcher IPs and Port

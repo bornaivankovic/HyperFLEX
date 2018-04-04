@@ -357,6 +357,16 @@ class HyperFlexHandler(object):
             ret = {'error': {'Authorization failed. You are not admin'}}
         return json.dumps(ret)
 
+    def change_hypervisor(self,new_ip):
+        """ Changes which hypervisor guicontroller should control.
+
+            Args:
+                new_ip (String): IP of the hypervisor that should be controlled
+        """
+        self._logger.info('RPC call change_hypervisor')
+        self._handler.change_hypervisor(new_ip)
+        
+
 
 class JsonRpcServer(object):
     def __init__(self, handler_cls):

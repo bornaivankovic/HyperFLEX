@@ -2206,6 +2206,14 @@ class StormConnector(object):
                 isolation=int(updates.pop('isolation_method'))
             )
         self._logger.debug('updated vsdn')
+    
+    def update_hypervisor(self,new_ip):
+        """ Updates the IP value of the Hypervisor node in NetworkNode table
+
+            Args:
+                new_ip (int): new IP address of the Hypervisor
+        """
+        self.store.find(NetworkNode,NetworkNode.info_type == 4).set(ip=new_ip)
                       
 
 

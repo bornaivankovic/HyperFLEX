@@ -81,4 +81,11 @@ function hyperflexKillPerfbench(callback, args, callback_error){
     jsonrpc.call(msg, args, callback, callback_error);
 }
 
+function hyperflexChangeHypervisor(callback, args)
+{
+    var msg = 'hyperflexhandler.change_hypervisor';
+    jsonrpc.call(msg, args, callback, function (error) {
+        console.log(error);
+    });
 
+}

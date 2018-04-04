@@ -19,6 +19,8 @@ import json
 import time
 import logging
 logging.basicConfig(level=logging.DEBUG)
+from management import hypervisor_config
+
 
 class ManagementGuiControllerHandler:
     """ Handles persisting and triggering of processes related to GUI events.
@@ -572,3 +574,15 @@ class ManagementGuiControllerHandler:
             self._connector.store.commit()
         return err
 
+    def change_hypervisor(self,new_ip):
+        """ Changes the hypervisor IP address in hypervisor_config and the database entry for Hypervisor in
+            NetworkNode table
+
+            Args:
+                new_ip (string): new IP address of the hypervisor
+
+        """
+        print "new_IP:",new_ip
+        hypervisor_config['ip']=new_ip
+        
+        self._connector.update_hypervisor(new_ip)
