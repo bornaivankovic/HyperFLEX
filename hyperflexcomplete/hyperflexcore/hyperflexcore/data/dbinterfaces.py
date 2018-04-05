@@ -2213,7 +2213,11 @@ class StormConnector(object):
             Args:
                 new_ip (int): new IP address of the Hypervisor
         """
-        self.store.find(NetworkNode,NetworkNode.info_type == 4).set(ip=new_ip)
+        try:
+            self._store.find(NetworkNode,NetworkNode.info_type == 4).set(ip=new_ip)
+            self._store.commit()
+        except Exception as e:
+            print "Error updating hypervisor IP: ",e
                       
 
 
